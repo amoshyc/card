@@ -12,6 +12,7 @@ Developing
 Requirement
 ============
 
+#. mdl: (already in project)
 #. Jinja2: (included in Pelican)
 #. Node.js
 #. gulp
