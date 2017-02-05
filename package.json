@@ -1,0 +1,27 @@
+{
+  "name": "card",
+  "version": "1.0.0",
+  "description": "a reponsive Pelican theme using mdl.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/amoshyc/card.git"
+  },
+  "keywords": [
+    "pelican-theme"
+  ],
+  "author": "amoshuangyc@gmail.com",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/amoshyc/card/issues"
+  },
+  "homepage": "https://github.com/amoshyc/card#readme",
+  "devDependencies": {
+    "gulp": "^3.9.1",
+    "gulp-sass": "^3.1.0",
+    "gulp-uglify": "^2.0.1"
+  }
+}
