@@ -1,0 +1,40 @@
+.cd-nav-buttons {
+    position: fixed;
+    z-index: 2;
+    top: 35%;
+    transform: translateY(-50%);
+    right: 44px;
+    width: 54px;
+    height: 80px;
+
+    @media screen and (max-width: $layout-screen-size-threshold) {
+        right: 17px;
+        width: 48px;
+        height: 80px;
+    }
+
+    .cd-nav-button-up, .cd-nav-button-down {
+        position: absolute;
+        color: white;
+        // background-color: rgba($primary-color, 0.8);
+        background-color: rgba($drawer-bg-color, 0.6);
+        border-radius: 2px;
+        height: 48%;
+        width: 100%;
+        min-width: 100%;
+        padding: 0px 10px;
+
+        &:hover {
+            // background-color: rgba(lighten($primary-color, 5%), 0.8);
+            background-color: rgba($drawer-bg-color, 0.9);
+        }
+    }
+
+    .cd-nav-button-up {
+        top: 0;
+    }
+
+    .cd-nav-button-down {
+        bottom: 0;
+    }
+}

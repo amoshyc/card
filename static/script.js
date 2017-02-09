@@ -1,0 +1,1 @@
+function init_nav_button(){var n=$(".cd-nav-button-up"),t=$(".cd-nav-button-down"),c=$(".cd-content"),i=$("main");null!=n&&null!=t&&null!=c&&null!=i&&(n.click(function(){c.animate({scrollTop:0},200)}),t.click(function(){c.animate({scrollTop:i.height()},200)}))}$(function(){init_nav_button()});

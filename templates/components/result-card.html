@@ -1,0 +1,22 @@
+{% macro result_card(articles, property) -%}
+<div class="cd-result-card mdl-cell mdl-cell--6-col mdl-card mdl-shadow--4dp">
+    {% for article in articles %}
+    <a class="cd-result-card-entry mdl-js-ripple-effect" href="{{ SITEURL }}/{{ article.url }}">
+        <span class="mdl-ripple"></span>
+        <p class="cd-result-card-entry-title">
+            {{ article.title }}
+        </p>
+        <p class="cd-result-card-entry-text">
+            {% if property == 'tags' %}
+                {{ article.tags|join(', ') }},
+            {% elif property == 'category' %}
+                {{ article.category }},
+            {% endif %}
+            <time datetime="{{ article.date.isoformat() }}">
+                {{ article.locale_date }}
+            </time>
+        </p>
+    </a>
+    {% endfor %}
+</div>
+{%- endmacro %}

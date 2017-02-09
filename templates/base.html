@@ -1,0 +1,38 @@
+<html lang="tw">
+    <head>
+        <!-- meta -->
+        <meta charset="utf-8" name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>{% block title %}{% endblock %}</title>
+        <link rel="shortcut icon" type="image/jpg" href="{{ SITEURL }}/theme/profile.jpg"/>
+
+        <!-- jquery -->
+        <script defer src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js">
+        </script>
+
+        <!-- mdl & custom css -->
+        <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+        <link rel="stylesheet" href="{{ SITEURL }}/theme/all.css">
+
+        <!-- mdl & custom js -->
+        <script defer src="{{ SITEURL }}/theme/material.min.js"></script>
+        <script defer src="{{ SITEURL }}/theme/script.js"></script>
+    </head>
+
+    <body>
+        <div class="cd-layout mdl-layout mdl-js-layout mdl-layout--fixed-drawer">
+            {% from 'components/drawer.html' import drawer %}
+            {{ drawer(SITENAME, SUPPORT_TEXT, 'profile.jpg', [
+                ('ABOUT', 'account_circle', ''),
+                ('ARCHIVE', 'archive', ''),
+                ('CATEGORY', 'view_list', ''),
+                ('TAG', 'local_offer', ''),
+                ('SEARCH', 'search', '')
+            ]) }}
+
+            <div class="cd-content mdl-layout__content">
+                {% block content %}
+                {% endblock %}
+            </div>
+        </div>
+    </body>
+</html>

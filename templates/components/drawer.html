@@ -1,0 +1,34 @@
+{% macro drawer(sitename, text, image, links) %}
+
+<div class="cd-drawer mdl-layout__drawer">
+
+    <!-- control position -->
+    <div class="cd-drawer-wrap">
+
+        <!-- profile image -->
+        <div class="profile-img"></div>
+
+        <!-- sitename, supporting text -->
+        <span class="cd-drawer-title mdl-layout-title">
+            {{ sitename }}
+        </span>
+        <p class="cd-drawer-support-text">
+            {{ text }}
+        </p>
+
+        <!-- navigation -->
+        <nav class="cd-nav mdl-navigation">
+            {% for word, icon, url in links %}
+                <a class="cd-nav-link mdl-navigation__link" href='{{ url }}'>
+                    <i class="material-icons">{{ icon }}</i>
+                    &nbsp;
+                    {{ word }}
+                </a>
+            {% endfor %}
+        </nav>
+
+    </div>
+</div>
+
+
+{% endmacro %}

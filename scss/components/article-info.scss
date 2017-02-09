@@ -1,0 +1,51 @@
+.cd-article-card-info-large {
+    color: $article-card-fg-color;
+    font-family: 'Roboto Slab', serif;
+    font-size: $article-font-size;
+    padding: 10px 60px 10px 60px;
+
+    i {
+        font-size: $article-font-size * 1.3;
+    }
+
+    a {
+        font-family: 'Roboto Slab', serif;
+        color: $primary-color;
+        text-decoration: none;
+    }
+
+    .cd-article-card-info-large-entry {
+        vertical-align: top;
+        display: inline-block;
+        text-align: center;
+        line-height: 21px;
+        width: 30%;
+    }
+
+    .cd-article-card-info-large-tooltip {
+        font-family: 'Roboto Slab', sans;
+        font-size: 16px;
+        line-height: 18px;
+    }
+}
+
+.cd-article-card-info-small {
+    color: $article-card-fg-color;
+    font-family: 'Roboto Slab', serif;
+    font-size: $article-font-size;
+    padding: 10px 60px 10px 60px;
+    text-align: center;;
+
+    i {
+        display: inline-block;
+        font-size: $article-font-size * 1.5;
+        margin-left: 10px;
+        margin-right: 10px;
+    }
+
+    .cd-article-card-info-small-tooltip {
+        font-family: 'Roboto Slab', sans;
+        font-size: 16px;
+        line-height: 18px;
+    }
+}

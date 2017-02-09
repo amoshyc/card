@@ -1,0 +1,12 @@
+{% extends "base.html" %}
+{% block title %} {{ article.title }} | amoshyc{% endblock %}
+
+{% block content %}
+<main>
+    {% from "components/article-card.html" import article_card %}
+    {{ article_card(article, category) }}
+
+    {% from "components/nav-button.html" import nav_button %}
+    {{ nav_button() }}
+</main>
+{% endblock %}

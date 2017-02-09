@@ -1,0 +1,64 @@
+{% macro article_info(article) %}
+<!-- for large screen -->
+<div class="cd-article-card-info-large mdl-layout--large-screen-only">
+    <!-- tags -->
+    <div class="cd-article-card-info-large-entry">
+        <i class="material-icons" id="tag-icon-large">local_offer</i>
+        <div class="cd-article-card-info-large-tooltip mdl-tooltip mdl-tooltip--top" data-mdl-for="tag-icon-large">
+            Tag(s)
+        </div>
+        <br>
+        {% for tag in article.tags %}
+        <a class="cd-article-card-author" href="{{ tag.url }}">
+            {{ tag }} <br>
+        </a>
+        {% endfor %}
+    </div>
+    <!-- authors -->
+    <div class="cd-article-card-info-large-entry">
+        <i class="material-icons" id="author-icon-large">people</i>
+        <div class="cd-article-card-info-large-tooltip mdl-tooltip mdl-tooltip--top" data-mdl-for="author-icon-large">
+            Author(s)
+        </div>
+        <br>
+        {% for author in article.authors %}
+        <a class="cd-article-card-author" href="{{ author.url }}">
+            {{ author }} <br>
+        </a>
+        {% endfor %}
+    </div>
+    <!-- time -->
+    <div class="cd-article-card-info-large-entry">
+        <i class="material-icons" id="time-icon-large">insert_invitation</i>
+        <div class="cd-article-card-info-large-tooltip mdl-tooltip mdl-tooltip--top" data-mdl-for="time-icon-large">
+            Create/Modified Time
+        </div>
+        <br>
+        <time datetime="{{ article.date.isoformat() }}">
+            {{ article.locale_date }}
+        </time>
+    </div>
+</div>
+
+<!-- for small screen -->
+<div class="cd-article-card-info-small mdl-layout--small-screen-only">
+    <!-- tags -->
+    <i class="material-icons" id="tag-icon-small">local_offer</i>
+    <div class="cd-article-card-info-small-tooltip mdl-tooltip mdl-tooltip--top" data-mdl-for="tag-icon-small">
+        {{ article.tags|join(',<br>') }}
+    </div>
+    <!-- authors -->
+    <i class="material-icons" id="author-icon-small">people</i>
+    <div class="cd-article-card-info-small-tooltip mdl-tooltip mdl-tooltip--top" data-mdl-for="author-icon-small">
+        {{ article.authors|join(',<br>') }}
+    </div>
+    <!-- time -->
+    <i class="material-icons" id="time-icon-small">insert_invitation</i>
+    <div class="cd-article-card-info-small-tooltip mdl-tooltip mdl-tooltip--top" data-mdl-for="time-icon-small">
+        <time datetime="{{ article.date.isoformat() }}">
+            {{ article.locale_date }}
+        </time>
+    </div>
+</div>
+
+{% endmacro %}

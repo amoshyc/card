@@ -1,0 +1,14 @@
+{% macro search_card(keyword, text) -%}
+<div class="cd-search-card mdl-cell mdl-cell--6-col mdl-card mdl-shadow--2dp">
+    <div class="cd-search-card-container">
+        <span class="cd-search-card-chip mdl-chip">
+            <span class="mdl-chip__text">
+                {{ keyword }}
+            </span>
+        </span>
+        <span class="cd-search-card-text">
+            {{ text }}
+        </span>
+    </div>
+</div>
+{%- endmacro %}

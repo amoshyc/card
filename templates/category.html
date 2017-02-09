@@ -1,0 +1,14 @@
+{% extends "base.html" %}
+{% block title %} Category: {{ category }} | amoshyc{% endblock %}
+
+{% block content %}
+<main>
+    <div class="cd-category-content">
+        {% from "components/search-card.html" import search_card %}
+        {{ search_card('Category', category) }}
+
+        {% from "components/result-card.html" import result_card %}
+        {{ result_card(articles, 'tags') }}
+    </div>
+</main>
+{% endblock %}

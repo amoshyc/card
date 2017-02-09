@@ -1,0 +1,35 @@
+.rst-content {
+    color: $article-card-fg-color;
+    font-size: 18px;
+
+    * {
+        color: $article-card-fg-color;
+        font-family: 'Roboto Slab', sans;
+    }
+
+    h1, h2, h3, h4, h5, h6 {
+        font-weight: bold;
+        margin: 10px 0;
+    }
+
+    h1 {
+        letter-spacing: 1px;
+        font-size: 175%;
+    }
+    h2 {
+        font-size: 150%;
+    }
+
+    p {
+        font-size: 100%;
+        white-space: pre-line;
+    }
+}
+
+
+// visibility: visible;
+// display: inline-block;
+// color: orange;
+// content: 'link';
+// font-size: 14px;
+// margin-left: 20px;

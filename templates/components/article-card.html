@@ -1,0 +1,25 @@
+{% macro article_card(article, category, focus) -%}
+
+<div class="cd-article-card mdl-cell mdl-cell--12-col mdl-card mdl-shadow--8dp">
+
+    <!-- article path -->
+    <a class="cd-article-card-category" href="{{ category.url }}">
+        {{ category }}
+    </a>
+
+    <hr>
+
+    <!-- article title & content -->
+    <div class="cd-article-card-rst-content">
+        <h1> {{ article.title }} </h1>
+        {{ article.content|safe }}
+    </div>
+
+    <hr>
+
+    <!-- article info -->
+    {% from "components/article-info.html" import article_info %}
+    {{ article_info(article) }}
+
+</div>
+{%- endmacro %}

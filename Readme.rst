@@ -29,21 +29,30 @@ Since the dependencies is already stated in package.json.
 
 I use scss for all style sheet in this project because mdl is written in scss.
 
-Design
-=========
+Design & Layout
+================
 
 Components
 ============
 
-All components listed below is a Jinja2's **macro** and is a file seperately. Their style sheet is located in ``scss/components``.
+Each component is in a directory.
+Ecah html file is a Jinja2 **marcro**.
+Each custom style is prefixed ``cd``.
 
 Drawer
 ---------
 
-Article-big
-------------
+macro definistion::
 
-Article-small
+    drawer(sitename, image, links)
+
+where
+
+    sitename: string                // name of blog
+    image: string               // path of profile image under static/
+    links: list of <word, icon, url>   // list of links in drawer with material icon and target url
+
+Article-card
 --------------
 
 Search-card

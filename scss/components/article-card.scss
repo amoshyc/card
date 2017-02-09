@@ -1,0 +1,49 @@
+.cd-article-card {
+    max-width: 800px;
+    margin: 30px auto;
+    padding-bottom: 30px;
+    background-color: $article-card-bg-color;
+    outline: none;
+
+    @media screen and (max-width: $layout-screen-size-threshold) {
+        padding-bottom: 10px;
+    }
+
+    .cd-article-card-category {
+        font-size: $article-font-size;
+        padding: 40px 60px 0px 60px;
+        color: $primary-color;
+        text-decoration: none;
+        font-weight: normal;
+
+        @media screen and (max-width: $layout-screen-size-threshold) {
+            padding: 10px 15px 0px 15px;
+        }
+    }
+
+    hr {
+        height: 2px;
+        margin: 8px 0px 8px 60px;
+        border: none;
+        background: linear-gradient(to right, #777, #fff);
+        background-size: 80% 2px;
+        background-position: top left;
+        background-repeat: no-repeat;
+
+        @media screen and (max-width: $layout-screen-size-threshold) {
+            margin-left: 15;
+            height: 1px;
+            background-size: 80% 1px;
+        }
+    }
+
+    .cd-article-card-rst-content {
+        padding: 0px 60px 0px 60px;
+
+        @media screen and (max-width: $layout-screen-size-threshold) {
+            padding: 0px 15px 30px 15px;
+        }
+
+        @extend .rst-content;
+    }
+}

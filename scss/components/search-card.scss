@@ -1,0 +1,38 @@
+.cd-search-card {
+    width: 80%;
+    max-width: 600px;
+    min-height: 10px;
+    height: auto;
+    margin: 30px auto 20px auto;
+    padding: 0px;
+    background-color: $article-card-bg-color;
+
+    @media screen and (max-width: $layout-screen-size-threshold) {
+        width: 95%;
+    }
+
+    .cd-search-card-container {
+        display: table;
+        margin: 7px 13px;
+
+        .cd-search-card-chip {
+            display: table;
+            background-color: lighten($primary-color, 5%);
+
+            .mdl-chip__text {
+                display: table-cell;
+                vertical-align: middle;
+                color: white;
+                font-size: $article-font-size - 4px;
+            }
+        }
+
+        .cd-search-card-text {
+            display: table-cell;
+            vertical-align: middle;
+            padding-left: 10px;
+            color: $article-card-fg-color;
+            font-size: $article-font-size;
+        }
+    }
+}

@@ -3,7 +3,7 @@ var gulp = require('gulp'),
     uglify = require('gulp-uglify');
 
 gulp.task('styles', function () {
-    gulp.src('scss/style.scss')
+    gulp.src('scss/all.scss')
         .pipe(gulpSass({
             outputStyle: 'compressed'
         }))
@@ -11,7 +11,7 @@ gulp.task('styles', function () {
 });
 
 gulp.task('scripts', function() {
-    gulp.src('src/script.js')
+    gulp.src('js/script.js')
         .pipe(uglify())
         .pipe(gulp.dest('./static'));
 });

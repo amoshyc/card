@@ -1,0 +1,13 @@
+* {
+    box-sizing: border-box;
+    font-family: 'Roboto Slab', sans;
+}
+
+
+body {
+    background-color: $body-bg-color;
+
+    .cd-content {
+        background-color: $body-bg-color;
+    }
+}

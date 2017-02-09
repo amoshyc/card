@@ -1,0 +1,70 @@
+.cd-result-card {
+    width: 80%;
+    max-width: 600px;
+    min-height: 10px;
+    height: auto;
+    margin: 10px auto 30px auto;
+    padding: 0px;
+    background-color: $article-card-bg-color;
+
+    @media screen and (max-width: $layout-screen-size-threshold) {
+        width: 95%;
+    }
+
+    .cd-result-card-entry {
+        // ripple effect workaround, bug in 1.3.0
+        // https://github.com/google/material-design-lite/issues/1096
+        position: relative;
+        overflow: hidden;
+
+        width: 100%;
+        margin: 0px;
+        padding: 13px;
+        text-decoration: none;
+
+        &:not(:last-child) {
+            border-bottom: 1px solid #ccc;
+        }
+
+        .cd-result-card-entry-title {
+            margin: 0px 0px 2px 0px;
+            color: $article-card-fg-color;
+            font-size: $article-font-size;
+            line-height: $article-font-size + 3px;
+        }
+
+        .cd-result-card-entry-text {
+            margin: 0px;
+            color: lighten($article-card-fg-color, 20%);
+            font-size: $article-font-size - 4px;
+            line-height: $article-font-size - 2px;
+
+            i {
+                vertical-align: middle;
+                font-size: $article-font-size - 4px;
+            }
+        }
+
+        @media screen and (min-width: $layout-screen-size-threshold + 1px) {
+            &:hover {
+                background-color: lighten($primary-color, 10%);
+                .cd-result-card-entry-title {
+                    color: white;
+                }
+                .cd-result-card-entry-text {
+                    color: white;
+                }
+            }
+
+            &:active {
+                background-color: #e0e0e0;
+                .cd-result-card-entry-title {
+                    color: lighten($article-card-fg-color, 10%);
+                }
+                .cd-result-card-entry-text {
+                    color: lighten($article-card-fg-color, 10%);
+                }
+            }
+        }
+    }
+}

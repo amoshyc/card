@@ -1,0 +1,52 @@
+.cd-drawer {
+    border: none;
+    box-shadow: none;
+    // overflow: hidden;
+    background-color: $drawer-bg-color;
+
+    .cd-drawer-wrap {
+        width: 75%;
+        // @extend .center-of-parent;
+        margin: 50px auto 0px auto;
+
+        .profile-img {
+            margin-top: 0;
+            height: 200px;
+            background: url('profile.jpg') center / cover;
+        }
+
+        .cd-drawer-title {
+            font-family: 'Roboto Slab', serif;
+            font-size: 20px;
+            line-height: 35px;
+            text-align: center;
+            color: $drawer-fg-color;
+        }
+
+        .cd-drawer-support-text {
+            font-family: 'Roboto Slab', serif;
+            text-align: center;
+            color: darken($drawer-fg-color, 20%);
+        }
+    }
+
+    .cd-nav {
+        padding-top: 0;
+
+        .cd-nav-link {
+            font-family: 'Roboto Slab', serif;
+            font-size: 16px;
+            border-radius: 5px;
+            padding: 7px 0px 7px 20px;
+            color: $drawer-fg-color;
+
+            .material-icons {
+                font-size: 30px;
+            }
+
+            &:hover {
+                background-color: lighten($drawer-bg-color, 10%);
+            }
+        }
+    }
+}
