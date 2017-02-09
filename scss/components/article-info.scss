@@ -4,7 +4,7 @@
     padding: 20px 60px;
     background-color: $article-card-bg-color;
     outline: none;
-    
+
     color: $article-card-fg-color;
     font-size: $article-font-size;
     min-height: 100px;
@@ -28,12 +28,12 @@
     }
 
     a {
-        color: lighten($primary-color, 5%);
+        color: $primary-color;
         text-decoration: none;
         font-size: $article-font-size - 2px;
 
         &:hover {
-            text-decoration: underline;
+            color: lighten($primary-color, 10%);
         }
     }
 

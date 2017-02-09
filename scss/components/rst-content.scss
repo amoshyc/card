@@ -1,5 +1,6 @@
 .rst-content {
     color: $article-card-fg-color;
+    font-size: $article-font-size;
     font-size: 18px;
 
     * {
@@ -24,7 +25,98 @@
         font-size: 100%;
         white-space: pre-line;
     }
+
+    // block literal
+    pre {
+        padding: 10px 10px;
+        background-color: lighten($article-card-bg-color, 2%);
+        border: 1px solid #ccc;
+        font-family: 'Oxygen Mono', monospace;
+    }
+
+    // inline literal
+    code, tt, .span {
+        border: 1px solid #ccc;
+        font-family: 'Oxygen Mono', monospace;
+        color: #0288d1;
+        background-color: lighten($article-card-bg-color, 2%);
+        padding-left: 2px;
+        padding-right: 2px;
+    }
+
+    a {
+        text-decoration: none;
+
+        &.toc-backref {
+
+        }
+
+        &.reference {
+            color: $primary-color;
+
+            &:hover {
+                color: lighten($primary-color, 10%);
+            }
+        }
+    }
+
+    ul, ol, li {
+        font-size: $article-font-size;
+    }
+
+    .sidebar {
+        float: right;
+        border: none;
+        margin-left: 10px;
+        padding-left: 10px;
+
+        @media screen and (max-width: $layout-screen-size-threshold) {
+            width: 100%;
+            border-bottom: 1px solid #ccc;
+            margin-left: 0;
+            margin-bottom: 10px;
+            padding-left: 0;
+        }
+
+        .sidebar-title {
+            text-align: center;
+            border-bottom: 1px solid #ccc;
+        }
+    }
 }
+
+// .sidebar {
+//     margin-left: 10px;
+//     float: right;
+//     border: 1px solid darken($body-bg-color, 8%);
+//
+//     .sidebar-title {
+//         padding: 2px 5px;
+//         background-color: darken($body-bg-color, 8%);
+//     }
+//
+//     * {
+//         font-size: $article-font-size - 2px;
+//         padding-left: 5px;
+//         padding-right: 5px;
+//     }
+// }
+
+// hr {
+//         height: 2px;
+//         margin: 8px 0px 8px 60px;
+//         border: none;
+//         background: linear-gradient(to right, #777, #fff);
+//         background-size: 80% 2px;
+//         background-position: top left;
+//         background-repeat: no-repeat;
+//
+//         @media screen and (max-width: $layout-screen-size-threshold) {
+//             margin-left: 15;
+//             height: 1px;
+//             background-size: 80% 1px;
+//         }
+//     }
 
 
 // visibility: visible;
