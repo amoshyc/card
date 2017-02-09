@@ -1,13 +1,24 @@
 {% macro nav_button() %}
 <div class="cd-nav-buttons">
-    <button class="cd-nav-button-up mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--colored mdl-shadow--8dp">
-        <i class="material-icons">keyboard_arrow_up</i>
-        <!-- <i class="material-icons">first_page</i> -->
+    <button class="cd-nav-button-up mdl-button mdl-js-button mdl-shadow--8dp" id="go-top">
+        <!-- <i class="material-icons">keyboard_arrow_up</i> -->
+        <i class="material-icons">first_page</i>
         <!-- <i class="material-icons">arrow_upward</i> -->
         <!-- <i class="material-icons">navigation</i> -->
     </button>
-    <button class="cd-nav-button-down mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--colored mdl-shadow--8dp">
+
+    <button class="cd-nav-button-down mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--colored mdl-shadow--8dp" id="go-down">
         <i class="material-icons">keyboard_arrow_down</i>
     </button>
 </div>
+
+<!-- it seems tooltip cannot be in a 'position:fixed' div, so I write it here -->
+<div class="mdl-tooltip mdl-tooltip--left" for="go-top">
+    Back to Top
+</div>
+<div class="mdl-tooltip mdl-tooltip--left" for="go-down">
+    Next Card
+</div>
+
+
 {% endmacro %}

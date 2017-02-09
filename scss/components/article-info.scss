@@ -1,51 +1,54 @@
-.cd-article-card-info-large {
+.cd-article-info {
+    max-width: 800px;
+    margin: 30px auto 0px auto;
+    padding: 20px 60px;
+    background-color: $article-card-bg-color;
+    outline: none;
+    
     color: $article-card-fg-color;
-    font-family: 'Roboto Slab', serif;
     font-size: $article-font-size;
-    padding: 10px 60px 10px 60px;
+    min-height: 100px;
+
+    @media screen and (max-width: $layout-screen-size-threshold) {
+        padding: 10px;
+    }
+
+    .cd-article-info-title {
+        margin: 0px;
+        padding: 0px;
+        letter-spacing: 1px;
+        font-size: 175%;
+        font-weight: bold;
+    }
 
     i {
-        font-size: $article-font-size * 1.3;
+        color: lighten($article-card-fg-color, 15%);
+        vertical-align: middle;
+        font-size: $article-font-size + 2px;
     }
 
     a {
-        font-family: 'Roboto Slab', serif;
-        color: $primary-color;
+        color: lighten($primary-color, 5%);
         text-decoration: none;
+        font-size: $article-font-size - 2px;
+
+        &:hover {
+            text-decoration: underline;
+        }
     }
 
-    .cd-article-card-info-large-entry {
-        vertical-align: top;
-        display: inline-block;
-        text-align: center;
-        line-height: 21px;
-        width: 30%;
+    .cd-article-info-category {
+        margin-top: 2px;
     }
 
-    .cd-article-card-info-large-tooltip {
-        font-family: 'Roboto Slab', sans;
-        font-size: 16px;
-        line-height: 18px;
-    }
-}
-
-.cd-article-card-info-small {
-    color: $article-card-fg-color;
-    font-family: 'Roboto Slab', serif;
-    font-size: $article-font-size;
-    padding: 10px 60px 10px 60px;
-    text-align: center;;
-
-    i {
-        display: inline-block;
-        font-size: $article-font-size * 1.5;
-        margin-left: 10px;
-        margin-right: 10px;
+    .cd-article-info-tags {
+        color: lighten($article-card-fg-color, 20%);
+        margin-top: 2px;
     }
 
-    .cd-article-card-info-small-tooltip {
-        font-family: 'Roboto Slab', sans;
-        font-size: 16px;
-        line-height: 18px;
+    .cd-article-info-author {
+        margin-top: 2px;
+        color: lighten($article-card-fg-color, 20%);
+        font-size: $article-font-size - 2px;
     }
 }

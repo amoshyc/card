@@ -1,64 +1,55 @@
-{% macro article_info(article) %}
-<!-- for large screen -->
-<div class="cd-article-card-info-large mdl-layout--large-screen-only">
+{% macro article_info(article, category) %}
+
+<div class="cd-article-info mdl-cell mdl-cell--12-col mdl-card mdl-shadow--8dp">
+
+    <!-- title -->
+    <h1 class="cd-article-info-title">
+        {{ article.title }}
+    </h1>
+
+    <!-- category -->
+    <div class="cd-article-info-category">
+        <i class="material-icons" id="info-category">view_list</i>
+        <div class="mdl-tooltip mdl-tooltip--top" data-mdl-for="info-category">
+            Category
+        </div>
+        &nbsp;
+        <a href="{{ SITEURL }}/{{ category.url }}">
+            {{ category }}
+        </a>
+    </div>
+
     <!-- tags -->
-    <div class="cd-article-card-info-large-entry">
-        <i class="material-icons" id="tag-icon-large">local_offer</i>
-        <div class="cd-article-card-info-large-tooltip mdl-tooltip mdl-tooltip--top" data-mdl-for="tag-icon-large">
+    <div class="cd-article-info-tags">
+        <i class="material-icons" id="info-tags">local_offer</i>
+        <div class="mdl-tooltip mdl-tooltip--top" data-mdl-for="info-tags">
             Tag(s)
         </div>
-        <br>
+        &nbsp;
         {% for tag in article.tags %}
-        <a class="cd-article-card-author" href="{{ tag.url }}">
-            {{ tag }} <br>
-        </a>
+            {% if not loop.first %}
+                ,&nbsp;
+            {% endif %}
+            <a href="{{ SITEURL }}/{{ tag.url }}">
+                {{ tag }}
+            </a>
         {% endfor %}
     </div>
-    <!-- authors -->
-    <div class="cd-article-card-info-large-entry">
-        <i class="material-icons" id="author-icon-large">people</i>
-        <div class="cd-article-card-info-large-tooltip mdl-tooltip mdl-tooltip--top" data-mdl-for="author-icon-large">
-            Author(s)
-        </div>
-        <br>
-        {% for author in article.authors %}
-        <a class="cd-article-card-author" href="{{ author.url }}">
-            {{ author }} <br>
-        </a>
-        {% endfor %}
-    </div>
-    <!-- time -->
-    <div class="cd-article-card-info-large-entry">
-        <i class="material-icons" id="time-icon-large">insert_invitation</i>
-        <div class="cd-article-card-info-large-tooltip mdl-tooltip mdl-tooltip--top" data-mdl-for="time-icon-large">
-            Create/Modified Time
-        </div>
-        <br>
-        <time datetime="{{ article.date.isoformat() }}">
-            {{ article.locale_date }}
-        </time>
-    </div>
-</div>
 
-<!-- for small screen -->
-<div class="cd-article-card-info-small mdl-layout--small-screen-only">
-    <!-- tags -->
-    <i class="material-icons" id="tag-icon-small">local_offer</i>
-    <div class="cd-article-card-info-small-tooltip mdl-tooltip mdl-tooltip--top" data-mdl-for="tag-icon-small">
-        {{ article.tags|join(',<br>') }}
-    </div>
-    <!-- authors -->
-    <i class="material-icons" id="author-icon-small">people</i>
-    <div class="cd-article-card-info-small-tooltip mdl-tooltip mdl-tooltip--top" data-mdl-for="author-icon-small">
-        {{ article.authors|join(',<br>') }}
-    </div>
-    <!-- time -->
-    <i class="material-icons" id="time-icon-small">insert_invitation</i>
-    <div class="cd-article-card-info-small-tooltip mdl-tooltip mdl-tooltip--top" data-mdl-for="time-icon-small">
+    <!-- author & time -->
+    <div class="cd-article-info-author">
+        <i class="material-icons" id="info-author">people</i>
+        <div class="mdl-tooltip mdl-tooltip--top" data-mdl-for="info-author">
+            Author(s)@Time
+        </div>
+        &nbsp;
+        {{ article.authors|join(', ') }}
+        @
         <time datetime="{{ article.date.isoformat() }}">
             {{ article.locale_date }}
         </time>
     </div>
+
 </div>
 
 {% endmacro %}

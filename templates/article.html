@@ -3,10 +3,24 @@
 
 {% block content %}
 <main>
+    <!-- anchor -->
+    <a class="anchor" id="article-info"></a>
+
+    {% from "components/article-info.html" import article_info %}
+    {{ article_info(article, category) }}
+
+    <!-- anchor -->
+    <a class="anchor" id="article-card"></a>
+
     {% from "components/article-card.html" import article_card %}
-    {{ article_card(article, category) }}
+    {{ article_card(article) }}
 
     {% from "components/nav-button.html" import nav_button %}
     {{ nav_button() }}
+
+    <!-- anchor -->
+    <!-- It seems that anchor at the bottom cannot be empty -->
+    <a class="anchor" id="end">bottom</a>
+
 </main>
 {% endblock %}
