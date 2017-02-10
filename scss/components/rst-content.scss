@@ -1,51 +1,103 @@
 .rst-content {
     color: $article-card-fg-color;
     font-size: $article-font-size;
-    font-size: 18px;
 
-    * {
+    .basic {
         color: $article-card-fg-color;
         font-family: 'Roboto Slab', sans;
+        font-size: $article-font-size;
     }
 
-    h1, h2, h3, h4, h5, h6 {
-        font-weight: bold;
-        margin: 10px 0;
+    .mono {
+        color: $article-card-fg-color;
+        font-family: 'Oxygen Mono', monospace;
+        font-size: $article-font-size;
+        background-color: lighten($article-card-bg-color, 2%);
     }
 
     h1 {
+        @extend .basic;
         letter-spacing: 1px;
         font-size: 175%;
     }
     h2 {
+        @extend .basic;
         font-size: 150%;
     }
 
     p {
-        font-size: 100%;
-        white-space: pre-line;
-    }
-
-    // block literal
-    pre {
-        padding: 10px 10px;
-        background-color: lighten($article-card-bg-color, 2%);
-        border: 1px solid #ccc;
-        font-family: 'Oxygen Mono', monospace;
+        @extend .basic;
+        white-space: pre-wrap;
     }
 
     // inline literal
-    code, tt, .span {
-        border: 1px solid #ccc;
-        font-family: 'Oxygen Mono', monospace;
+    tt {
+        @extend .mono;
         color: #0288d1;
-        background-color: lighten($article-card-bg-color, 2%);
         padding-left: 2px;
         padding-right: 2px;
+        font-size: $article-font-size - 2px;
     }
 
+    // literal block
+    pre.literal-block {
+        @extend .mono;
+        padding: 5px 5px;
+        border: 1px solid #ccc;
+        overflow: auto;
+        white-space: pre-wrap;
+        font-size: $article-font-size - 2px;
+    }
+
+    // code block
+    table.highlighttable {
+        table-layout: fixed;
+        width: 100%;
+        padding: 5px;
+        border: 1px solid #ccc;
+        background-color: lighten($article-card-bg-color, 2%);
+
+        tbody, tr, td {
+            background-color: lighten($article-card-bg-color, 2%);
+        }
+
+        pre, span {
+            // not using @extend .mono to prevent
+            // overwriting pygments.css color
+            font-family: 'Oxygen Mono', monospace;
+            background-color: lighten($article-card-bg-color, 2%);
+
+            margin: 0;
+            padding: 0;
+            font-size: $article-font-size - 4px;
+            line-height: ($article-font-size - 4px) * 1.25;
+        }
+
+        td.linenos {
+            padding: 1px 0px 1px 0px;
+            width: 30px;
+            vertical-align: top;
+        }
+        td.code {
+            padding: 1px 0px 1px 12px;
+            vertical-align: top;
+
+            .highlight {
+                overflow-y: hidden;
+                overflow-x: auto;
+            }
+
+            pre {
+                white-space: pre;
+            }
+        }
+    }
+
+    // anchor, link
     a {
+        @extend .basic;
         text-decoration: none;
+        font-size: inherit;
 
         &.toc-backref {
 
@@ -60,11 +112,15 @@
         }
     }
 
+    // list
     ul, ol, li {
-        font-size: $article-font-size;
+        @extend .basic;
+        font-size: $article-font-size - 2px;
     }
 
+    // sidebar
     .sidebar {
+        @extend .basic;
         float: right;
         border: none;
         margin-left: 10px;
@@ -84,44 +140,3 @@
         }
     }
 }
-
-// .sidebar {
-//     margin-left: 10px;
-//     float: right;
-//     border: 1px solid darken($body-bg-color, 8%);
-//
-//     .sidebar-title {
-//         padding: 2px 5px;
-//         background-color: darken($body-bg-color, 8%);
-//     }
-//
-//     * {
-//         font-size: $article-font-size - 2px;
-//         padding-left: 5px;
-//         padding-right: 5px;
-//     }
-// }
-
-// hr {
-//         height: 2px;
-//         margin: 8px 0px 8px 60px;
-//         border: none;
-//         background: linear-gradient(to right, #777, #fff);
-//         background-size: 80% 2px;
-//         background-position: top left;
-//         background-repeat: no-repeat;
-//
-//         @media screen and (max-width: $layout-screen-size-threshold) {
-//             margin-left: 15;
-//             height: 1px;
-//             background-size: 80% 1px;
-//         }
-//     }
-
-
-// visibility: visible;
-// display: inline-block;
-// color: orange;
-// content: 'link';
-// font-size: 14px;
-// margin-left: 20px;

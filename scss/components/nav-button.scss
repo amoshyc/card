@@ -3,7 +3,7 @@
     z-index: 2;
     top: 50%;
     transform: translateY(-50%);
-    right: 44px;
+    right: 15px;
     width: 54px;
     height: 80px;
 
@@ -16,7 +16,7 @@
     .cd-nav-button-up, .cd-nav-button-down {
         position: absolute;
         color: white;
-        background-color: rgba($drawer-bg-color, 0.6);
+        background-color: rgba($drawer-bg-color, 0.5);
         border-radius: 2px;
         height: 48%;
         width: 100%;

@@ -3,9 +3,15 @@
 <div class="cd-article-card mdl-cell mdl-cell--12-col mdl-card mdl-shadow--8dp">
 
     <!-- article content -->
-    <div class="cd-article-card-rst-content">
-        {{ article.content|safe }}
-    </div>
+    {% if article.source_path[-3:] != '.rst' %}
+        <div class="cd-article-card-rst-content">
+            {{ article.content|safe }}
+        </div>
+    {% else %}
+        <div class="cd-article-card-md-content">
+            {{ article.content|safe }}
+        </div>
+    {% endif %}
 
 </div>
 {%- endmacro %}

@@ -16,26 +16,37 @@ function init_nav_button() {
         });
     });
 
-    // next card
-    var anchors = $('a.anchor');
+    // next section
     var current = content.scrollTop();
-    var ids = [], offsets = [];
-    anchors.each(function(idx, val) {
-        var elem = $(val);
-        ids.push(elem.attr('id'));
-        offsets.push(current + elem.offset().top);
+    var anchors = [];
+
+    function extract_anchor(idx, source) {
+        var elem = $(source);
+        var id = elem.attr('id');
+        var offset = current + elem.offset().top;
+        anchors.push({
+            'id': id,
+            'offset': offset
+        });
+    }
+
+    $('a.anchor').each(extract_anchor);
+    if ($('.cd-article-card-rst-content') == null)
+        $('h2').each(extract_anchor);
+    else
+        $('div.section').each(extract_anchor);
+    anchors.sort(function(a, b) {
+        return a.offset - b.offset
     });
 
     btnDown.click(function() {
         var cur = content.scrollTop();
-        for (idx in offsets) {
-            if (offsets[idx] > cur + 1) { // prevent eps
-                var id = ids[idx];
-                var target = offsets[idx];
+        for (var idx in anchors) {
+            if (anchors[idx].offset > cur + 1) { // prevent eps
                 content.animate({
-                    scrollTop: target
+                    scrollTop: anchors[idx].offset
                 }, 200, 'swing', function() {
-                    window.location.hash = id;
+                    window.location.hash = anchors[idx].id;
                 });
                 break;
             }

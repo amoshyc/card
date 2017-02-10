@@ -3,6 +3,7 @@
 
 {% block content %}
 <main>
+
     <!-- anchor -->
     <a class="anchor" id="article-info"></a>
 
@@ -10,7 +11,9 @@
     {{ article_info(article, category) }}
 
     <!-- anchor -->
-    <a class="anchor" id="article-card"></a>
+    {% if article.source_path[-3:] == '.md' %}
+        <a class="anchor" id="article-card"></a>
+    {% endif %}
 
     {% from "components/article-card.html" import article_card %}
     {{ article_card(article) }}
