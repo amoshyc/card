@@ -1,0 +1,14 @@
+.cd-article-preview {
+    @extend .cd-article-info;
+
+    &:hover {
+        cursor: pointer;
+        .cd-article-info-title {
+            text-decoration: underline;
+        }
+    }
+
+    & > a {
+
+    }
+}

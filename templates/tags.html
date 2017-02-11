@@ -5,7 +5,7 @@
 <main>
     <div>
         {% from "components/search-card.html" import search_card %}
-        {{ search_card('Tags', 'all') }}
+        {{ search_card('Tags', tags|count|string + ' tags in total') }}
 
         <div class="cd-tag-cloud-card mdl-cell mdl-cell--6-col mdl-card mdl-shadow--4dp">
             <div>

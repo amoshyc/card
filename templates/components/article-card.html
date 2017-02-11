@@ -4,11 +4,11 @@
 
     <!-- article content -->
     {% if article.source_path[-3:] != '.rst' %}
-        <div class="cd-article-card-rst-content">
+        <div class="rst-content">
             {{ article.content|safe }}
         </div>
     {% else %}
-        <div class="cd-article-card-md-content">
+        <div class="md-content">
             {{ article.content|safe }}
         </div>
     {% endif %}

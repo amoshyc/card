@@ -1,0 +1,70 @@
+{% macro article_preview(article, category) %}
+
+<div class="cd-article-preview mdl-cell mdl-cell--12-col mdl-card mdl-shadow--8dp">
+    <!-- use to store url -->
+    <a href="{{ SITEURL }}/{{ article.url }}"></a>
+
+    <!-- title -->
+    <h1 class="cd-article-info-title">
+        {{ article.title }}
+    </h1>
+
+    <!-- category -->
+    <div class="cd-article-info-category">
+        <i class="material-icons" id="info-category">view_list</i>
+        <div class="mdl-tooltip mdl-tooltip--top" data-mdl-for="info-category">
+            Category
+        </div>
+        &nbsp;
+        <a href="{{ SITEURL }}/{{ category.url }}">
+            {{ category }}
+        </a>
+    </div>
+
+    <!-- tags -->
+    <div class="cd-article-info-tags">
+        <i class="material-icons" id="info-tags">local_offer</i>
+        <div class="mdl-tooltip mdl-tooltip--top" data-mdl-for="info-tags">
+            Tag(s)
+        </div>
+        &nbsp;
+        {% for tag in article.tags %}
+            {% if not loop.first %}
+                ,&nbsp;
+            {% endif %}
+            <a href="{{ SITEURL }}/{{ tag.url }}">
+                {{ tag }}
+            </a>
+        {% endfor %}
+    </div>
+
+    <!-- author & time -->
+    <div class="cd-article-info-author">
+        <i class="material-icons" id="info-author">people</i>
+        <div class="mdl-tooltip mdl-tooltip--top" data-mdl-for="info-author">
+            Author(s)@Time
+        </div>
+        &nbsp;
+        {{ article.authors|join(', ') }}
+        @
+        <time datetime="{{ article.date.isoformat() }}">
+            {{ article.locale_date }}
+        </time>
+    </div>
+
+    <!-- <br> -->
+
+    <!-- content -->
+    <!-- {% if article.source_path[-3:] != '.rst' %}
+        <div class="rst-content">
+            {{ article.content|safe }}
+        </div>
+    {% else %}
+        <div class="md-content">
+            {{ article.content|safe }}
+        </div>
+    {% endif %} -->
+
+</div>
+
+{% endmacro %}

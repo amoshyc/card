@@ -18,16 +18,22 @@
         padding: 0px;
         letter-spacing: 1px;
         font-size: 175%;
-        font-weight: bold;
+        font-family: 'Roboto Slab', sans;
     }
 
-    i {
+    // prevent overwriting content's style
+    .cd-article-info-category i,
+    .cd-article-info-tags i,
+    .cd-article-info-author i {
         color: lighten($article-card-fg-color, 15%);
         vertical-align: middle;
         font-size: $article-font-size + 2px;
     }
 
-    a {
+    // prevent overwriting content's style
+    .cd-article-info-category a,
+    .cd-article-info-tags a,
+    .cd-article-info-author a {
         color: $primary-color;
         text-decoration: none;
         font-size: $article-font-size - 2px;

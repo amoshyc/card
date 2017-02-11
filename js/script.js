@@ -60,6 +60,20 @@ function init_nav_button() {
     });
 }
 
+function init_preview_card() {
+    var cards = $('.cd-article-preview');
+    if (cards == null)
+        return;
+
+    cards.each(function(idx, source) {
+        var elem = $(source);
+        elem.click(function() {
+            window.location.href = elem.children('a').attr('href');
+        });
+    });
+}
+
 $(function() {
     init_nav_button();
+    init_preview_card();
 });
