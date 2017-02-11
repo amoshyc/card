@@ -11,8 +11,8 @@
 
     <!-- category -->
     <div class="cd-article-info-category">
-        <i class="material-icons" id="info-category">view_list</i>
-        <div class="mdl-tooltip mdl-tooltip--top" data-mdl-for="info-category">
+        <i class="material-icons" id="{{ article.url }}-info-category">view_list</i>
+        <div class="mdl-tooltip mdl-tooltip--top" data-mdl-for="{{ article.url }}-info-category">
             Category
         </div>
         &nbsp;
@@ -23,9 +23,9 @@
 
     <!-- tags -->
     <div class="cd-article-info-tags">
-        <i class="material-icons" id="info-tags">local_offer</i>
-        <div class="mdl-tooltip mdl-tooltip--top" data-mdl-for="info-tags">
-            Tag(s)
+        <i class="material-icons" id="{{ article.url }}-info-tags">local_offer</i>
+        <div class="mdl-tooltip mdl-tooltip--top" data-mdl-for="{{ article.url }}-info-tags">
+            Tag
         </div>
         &nbsp;
         {% for tag in article.tags %}
@@ -40,9 +40,9 @@
 
     <!-- author & time -->
     <div class="cd-article-info-author">
-        <i class="material-icons" id="info-author">people</i>
-        <div class="mdl-tooltip mdl-tooltip--top" data-mdl-for="info-author">
-            Author(s)@Time
+        <i class="material-icons" id="{{ article.url }}-info-author">people</i>
+        <div class="mdl-tooltip mdl-tooltip--top" data-mdl-for="{{ article.url }}-info-author">
+            Author @ Time
         </div>
         &nbsp;
         {{ article.authors|join(', ') }}
@@ -52,10 +52,10 @@
         </time>
     </div>
 
-    <!-- <br> -->
 
-    <!-- content -->
-    <!-- {% if article.source_path[-3:] != '.rst' %}
+    <!-- article content -->
+    <br>
+    {% if article.source_path[-3:] != '.rst' %}
         <div class="rst-content">
             {{ article.content|safe }}
         </div>
@@ -63,7 +63,7 @@
         <div class="md-content">
             {{ article.content|safe }}
         </div>
-    {% endif %} -->
+    {% endif %}
 
 </div>
 

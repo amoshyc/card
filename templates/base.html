@@ -24,8 +24,8 @@
             {% from 'components/drawer.html' import drawer %}
             {{ drawer(SITENAME, SUPPORT_TEXT, 'profile.jpg', [
                 ('ABOUT', 'account_circle', ''),
-                ('ARCHIVE', 'archive', ''),
-                ('CATEGORY', 'view_list', ''),
+                ('ARCHIVE', 'archive', 'archives.html'),
+                ('CATEGORY', 'view_list', 'categories.html'),
                 ('TAG', 'local_offer', SITEURL + '/tags.html'),
                 ('SEARCH', 'search', '')
             ]) }}

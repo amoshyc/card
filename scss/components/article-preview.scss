@@ -1,14 +1,11 @@
 .cd-article-preview {
     @extend .cd-article-info;
+    max-height: 480px;
 
     &:hover {
         cursor: pointer;
         .cd-article-info-title {
             text-decoration: underline;
         }
-    }
-
-    & > a {
-
     }
 }
