@@ -1,0 +1,26 @@
+{% extends "base.html" %}
+{% block title %} Tags | amoshyc{% endblock %}
+
+{% block content %}
+<main>
+    <div>
+        {% from "components/search-card.html" import search_card %}
+        {{ search_card('Tags', 'all') }}
+
+        <div class="cd-tag-cloud-card mdl-cell mdl-cell--6-col mdl-card mdl-shadow--4dp">
+            <div>
+                {% for tag in tag_cloud %}
+                <a class="tag-{{ tag.1 }}" href="{{ SITEURL }}/{{ tag.0.url }}">
+                    {{ tag.0 }}
+                    {% if TAG_CLOUD_BADGE %}
+                    <span class="badge">({{ tag.2 }})</span>
+                    {% endif %}
+                </a>
+                &nbsp;&nbsp;
+                {% endfor %}
+            </div>
+        </div>
+
+    </div>
+</main>
+{% endblock %}

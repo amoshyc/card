@@ -1,4 +1,4 @@
-{% macro result_card(articles, property) -%}
+{% macro result_card(articles, attr) -%}
 <div class="cd-result-card mdl-cell mdl-cell--6-col mdl-card mdl-shadow--4dp">
     {% for article in articles %}
     <a class="cd-result-card-entry mdl-js-ripple-effect" href="{{ SITEURL }}/{{ article.url }}">
@@ -7,9 +7,9 @@
             {{ article.title }}
         </p>
         <p class="cd-result-card-entry-text">
-            {% if property == 'tags' %}
+            {% if attr == 'tags' %}
                 {{ article.tags|join(', ') }},
-            {% elif property == 'category' %}
+            {% elif attr == 'category' %}
                 {{ article.category }},
             {% endif %}
             <time datetime="{{ article.date.isoformat() }}">

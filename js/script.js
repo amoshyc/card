@@ -22,11 +22,17 @@ function init_nav_button() {
 
     function extract_anchor(idx, source) {
         var elem = $(source);
-        var id = elem.attr('id');
-        var offset = current + elem.offset().top;
         anchors.push({
-            'id': id,
-            'offset': offset
+            'id': elem.attr('id'),
+            'offset': current + elem.offset().top
+        });
+    }
+
+    function extract_anchor_rst(idx, source) {
+        var elem = $(source);
+        anchors.push({
+            'id': elem.parent().attr('id'),
+            'offset': current + elem.offset().top
         });
     }
 
@@ -34,7 +40,7 @@ function init_nav_button() {
     if ($('.cd-article-card-rst-content') == null)
         $('h2').each(extract_anchor);
     else
-        $('div.section').each(extract_anchor);
+        $('h2').each(extract_anchor_rst);
     anchors.sort(function(a, b) {
         return a.offset - b.offset
     });
