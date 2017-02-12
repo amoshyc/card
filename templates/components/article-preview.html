@@ -9,6 +9,20 @@
         {{ article.title }}
     </h1>
 
+    <!-- author & time -->
+    <div class="cd-article-info-author">
+        <i class="material-icons" id="{{ article.url }}-info-author">people</i>
+        <div class="mdl-tooltip mdl-tooltip--top" data-mdl-for="{{ article.url }}-info-author">
+            Author @ Time
+        </div>
+        &nbsp;
+        {{ article.authors|join(', ') }}
+        @
+        <time datetime="{{ article.date.isoformat() }}">
+            {{ article.locale_date }}
+        </time>
+    </div>
+
     <!-- category -->
     <div class="cd-article-info-category">
         <i class="material-icons" id="{{ article.url }}-info-category">view_list</i>
@@ -38,23 +52,9 @@
         {% endfor %}
     </div>
 
-    <!-- author & time -->
-    <div class="cd-article-info-author">
-        <i class="material-icons" id="{{ article.url }}-info-author">people</i>
-        <div class="mdl-tooltip mdl-tooltip--top" data-mdl-for="{{ article.url }}-info-author">
-            Author @ Time
-        </div>
-        &nbsp;
-        {{ article.authors|join(', ') }}
-        @
-        <time datetime="{{ article.date.isoformat() }}">
-            {{ article.locale_date }}
-        </time>
-    </div>
-
 
     <!-- article content -->
-    <br>
+    <!-- <br>
     {% if article.source_path[-3:] != '.rst' %}
         <div class="rst-content">
             {{ article.content|safe }}
@@ -63,7 +63,12 @@
         <div class="md-content">
             {{ article.content|safe }}
         </div>
-    {% endif %}
+    {% endif %} -->
+
+    <!-- article summary -->
+    <div class="cd-article-preview-summary">
+        {{ article.summary }}
+    </div>
 
 </div>
 

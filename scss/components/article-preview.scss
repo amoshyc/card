@@ -1,11 +1,18 @@
 .cd-article-preview {
     @extend .cd-article-info;
     max-height: 480px;
+    max-width: 600px;
 
     &:hover {
         cursor: pointer;
         .cd-article-info-title {
             text-decoration: underline;
         }
+    }
+
+    .cd-article-preview-summary > p {
+        margin-top: 20px;
+        color: lighten($article-card-fg-color, 20%);
+        font-size: $article-font-size;
     }
 }

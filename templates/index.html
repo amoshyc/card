@@ -3,6 +3,13 @@
 
 {% block content %}
 <main>
+    {% from "components/article-preview.html" import article_preview %}
+
+    <div class="cd-index-container">
+        {% for article in articles %}
+            {{ article_preview(article, article.category) }}
+        {% endfor %}
+    </div>
 
 </main>
 {% endblock %}

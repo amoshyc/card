@@ -77,9 +77,11 @@
             padding: 1px 0px 1px 0px;
             width: 30px;
             vertical-align: top;
+            border-right: 1px solid #ccc;
+            color: #404040;
         }
         td.code {
-            padding: 1px 0px 1px 1px;
+            padding: 1px 0px 1px 5px;
             vertical-align: top;
 
             .highlight {
@@ -89,6 +91,10 @@
 
             pre {
                 white-space: pre;
+            }
+
+            &:hover {
+                // cursor: move;
             }
         }
     }
@@ -127,10 +133,17 @@
         padding-left: 10px;
 
         @media screen and (max-width: $layout-screen-size-threshold) {
+            &:after {
+                content: '§';
+                float: right;
+                font-family: 'Oxygen Mono', sans;
+                font-size: $article-font-size - 2px;
+                margin-top: -$article-font-size * 1.5;
+                color: #aaa;
+            }
+
             width: 100%;
-            border-bottom: 1px solid #ccc;
             margin-left: 0;
-            margin-bottom: 10px;
             padding-left: 0;
         }
 
